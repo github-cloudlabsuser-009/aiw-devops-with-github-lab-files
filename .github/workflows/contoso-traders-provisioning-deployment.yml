@@ -253,7 +253,7 @@ jobs:
           CARTS_API_ENDPOINT: ${{ steps.get-cartsApiEndpoint.outputs.cartsApiEndpoint }}
           PRODUCTS_API_ENDPOINT: ${{ steps.get-productsApiEndpoint.outputs.productsApiEndpoint }}
       - name: npm install
-        run: nvm install 14 && nvm use 14 && npm install
+        run: wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash && nvm install 14 && nvm use 14 && npm install
         working-directory: src/ContosoTraders.Ui.Website
       - name: npm run build
         run: npm run build
